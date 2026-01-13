@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operação Lua de Mel - Pix</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { box-sizing: border-box; }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)} }
+    @keyframes sparkle { 0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)} }
+    .heart-float{animation:float 6s ease-in-out infinite}
+    .heart-float-delayed{animation:float 6s ease-in-out infinite 2s}
+    .sparkle{animation:sparkle 2s ease-in-out infinite}
+    .sparkle-delayed{animation:sparkle 2s ease-in-out infinite .5s}
+    .sparkle-delayed-2{animation:sparkle 2s ease-in-out infinite 1s}
+  </style>
+</head>
+<body class="h-full font-poppins">
+<div class="min-h-full flex items-center justify-center p-6" style="background:linear-gradient(135deg,#f5f5dc,#e8e8d0,#d4d4b8)">
+  <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 text-center">
+    <div class="text-6xl mb-4">💒</div>
+    <h1 class="font-playfair text-3xl font-bold text-[#4a5a28] mb-2">Operação Lua de Mel</h1>
+    <p class="text-sm text-[#6b7c3f] mb-6">Contribua para nossa lua de mel dos sonhos ✨</p>
+
+    <div class="rounded-2xl p-4 mb-6 border bg-[#f5f5e8] border-[#c8c8a8]">
+      <p class="text-xs uppercase tracking-wider font-medium text-[#6b7c3f]">Chave Pix (Telefone)</p>
+      <p class="font-semibold text-lg text-[#4a5a28]">69 99967-7866</p>
+      <p class="text-sm text-[#5a6a35]">Mauro Valentino Paloschi</p>
+    </div>
+
+    <div class="bg-[#f5f5e8] rounded-xl p-3 mb-6">
+      <p class="text-xs uppercase tracking-wider font-medium mb-2 text-[#8b9d4a]">Código Pix Copia e Cola</p>
+      <p id="pix-code" class="text-xs break-all font-mono text-[#4a5a28]">
+00020126560014br.gov.bcb.pix0111006223902360219Operacao lua de mel5204000053039865802BR5924MAURO VALENTINO PALOSCHI6011PORTO VELHO62290525vnQYSDApJ88ZONduKRbSZPxLP630447C3
+      </p>
+    </div>
+
+    <button onclick="copyPixCode()" class="w-full text-white font-semibold py-4 px-6 rounded-2xl shadow-lg transition transform hover:scale-105 bg-gradient-to-r from-[#6b7c3f] to-[#8b9d4a]">
+      📋 Copiar Código Pix
+    </button>
+
+    <div id="success" class="hidden mt-4 text-sm text-green-700">
+      ✅ Código copiado com sucesso!
+    </div>
+
+    <div class="mt-8 text-xs text-[#8b9d4a]">
+      Feito com 💚 para nosso grande dia
+    </div>
+  </div>
+</div>
+
+<script>
+const PIX_CODE = `00020126560014br.gov.bcb.pix0111006223902360219Operacao lua de mel5204000053039865802BR5924MAURO VALENTINO PALOSCHI6011PORTO VELHO62290525vnQYSDApJ88ZONduKRbSZPxLP630447C3`;
+function copyPixCode(){
+  navigator.clipboard.writeText(PIX_CODE).then(()=>{
+    const s=document.getElementById('success');
+    s.classList.remove('hidden');
+    setTimeout(()=>s.classList.add('hidden'),3000);
+  });
+}
+</script>
+</body>
+</html>
